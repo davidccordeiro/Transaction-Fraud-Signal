@@ -1,0 +1,21 @@
+# Environment
+.env
+
+# Delta Lake data
+data/
+
+# MLflow artifacts
+mlflow/mlruns/
+
+# Python
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# dbt
+dbt/target/
+dbt/logs/
+
+# Terraform
+terraform/.terraform/
+terraform/*.tfstate
