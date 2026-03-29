@@ -66,10 +66,6 @@ def create_spark_session() -> SparkSession:
     """
     Builds a SparkSession with Delta Lake and Kafka support.
 
-    Both the Kafka and Delta JARs are passed via PYSPARK_SUBMIT_ARGS
-    so they are resolved together before SparkContext initialises.
-    configure_spark_with_delta_pip then adds the Delta pip package
-    on top without conflicting with the already-loaded JARs.
     """
     os.environ["PYSPARK_SUBMIT_ARGS"] = (
         "--packages "
