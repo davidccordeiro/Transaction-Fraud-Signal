@@ -21,3 +21,6 @@ dbt/logs/
 # Terraform
 terraform/.terraform/
 terraform/*.tfstate
+
+# dbt Symlink
+fraud_dbt
