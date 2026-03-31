@@ -121,10 +121,6 @@ def score_transactions(model, df: pd.DataFrame) -> pd.DataFrame:
     This is more robust than a hardcoded threshold because it
     adapts to the score distribution of each dataset.
 
-    Columns added:
-    - anomaly_score     : raw Isolation Forest score (more negative = riskier)
-    - is_predicted_fraud: True if score in bottom ANOMALY_PERCENTILE%
-    - risk_tier         : high / medium / low based on score percentiles
     """
     X = df[FEATURE_COLUMNS].values
 
