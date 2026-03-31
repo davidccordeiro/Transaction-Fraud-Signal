@@ -86,46 +86,37 @@ Transaction-Fraud-Signal/
 ├── .env                        # Environment config (never commit secrets)
 ├── .gitignore                  # Excludes .env, data/, mlruns/
 ├── README.md                   # This file
-├── requirements.txt            # Python dependencies (Phase 2)
+├── requirements.txt            # Python dependencies 
 ├── data/
 │   └── delta/
 │       ├── bronze/             # Raw ingested transactions
 │       ├── silver/             # Validated transactions
 │       └── gold/               # ML-ready feature table
 ├── producer/
-│   └── transaction_producer.py # Synthetic Kafka producer (Phase 3)
+│   └── transaction_producer.py # Synthetic Kafka producer 
 ├── streaming/
-│   ├── stream_processor.py     # Bronze ingestion (Phase 4)
-│   ├── silver_processor.py     # Silver validation (Phase 5)
-│   └── gold_processor.py       # Gold feature engineering (Phase 5)
-├── dbt/                        # dbt project (Phase 6)
+│   ├── stream_processor.py     # Bronze ingestion 
+│   ├── silver_processor.py     # Silver validation 
+│   └── gold_processor.py       # Gold feature engineering 
+├── dbt/                        # dbt project 
 ├── ml/
-│   ├── train.py                # Model training (Phase 7)
-│   └── score.py                # Real-time scoring (Phase 7)
+│   ├── train.py                # Model training 
+│   └── score.py                # Real-time scoring 
 ├── mlflow/                     # MLflow tracking store
 ├── docs/
-│   ├── ADR.md                  # Architecture Decision Record (Phase 8)
-│   └── cost_estimate.md        # Azure production cost model (Phase 8)
-└── terraform/                  # Local infra definitions (Phase 8)
+│   ├── ADR.md                  # Architecture Decision Record 
+│   └── cost_estimate.md        # Azure production cost model 
+
 ```
 
 ## Architecture Decision Record
 
-See [`docs/ADR.md`](docs/ADR.md) for the full rationale behind every major
+See [`docs/adr.md`](docs/adf.md) for the full rationale behind every major
 technology choice — including why Kafka over Kinesis, Delta Lake over Iceberg,
 and streaming over micro-batch for this use case.
 
 ## Cost Estimate
 
-See [`docs/cost_estimate.md`](docs/cost_estimate.md) for a production Azure
+See [`docs/prod_cost_estimate.md`](docs/prod_cost_estimate.md) for a production Azure
 cost breakdown. The local setup costs nothing to run.
-
-## Git Setup
-
-Initialise the repo and protect secrets:
-```bash
-git init
-git add .
-git commit -m "phase 1: environment setup — kafka, docker, readme"
-```
 
